@@ -1,560 +1,664 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Safei Carving | Karachi</title>
+<title>Safei Carving | Karachi</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f4f1eb;
+    color: #171717;
+}
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #f7f3ed;
-            color: #241b14;
-            line-height: 1.6;
-        }
+/* ===== HEADER ===== */
 
-        /* HEADER */
-
-        header {
-            background: #1c1510;
-            color: #f4e7d5;
-            text-align: center;
-            padding: 28px 15px;
-        }
-
-        .logo {
-            font-size: clamp(32px, 6vw, 52px);
-            letter-spacing: 3px;
-            font-weight: bold;
-        }
-
-        .tagline {
-            margin-top: 6px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            letter-spacing: 3px;
-            color: #cdb594;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 560px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 70px 20px;
-            background: #d4c0a5;
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .location {
-            font-family: Arial, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 13px;
-            margin-bottom: 18px;
-            color: #4e3a27;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 82px);
-            font-weight: normal;
-            line-height: 1.05;
-        }
-
-        .hero p {
-            max-width: 680px;
-            margin: 25px auto;
-            font-family: Arial, sans-serif;
-            font-size: clamp(16px, 2.2vw, 20px);
-            line-height: 1.7;
-            color: #46372a;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 15px 32px;
-            background: #21170f;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            background: #5b432e;
-        }
-
-        /* SECTIONS */
-
-        .section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .section h2 {
-            font-size: clamp(30px, 5vw, 45px);
-            font-weight: normal;
-        }
-
-        .line {
-            width: 65px;
-            height: 2px;
-            background: #987653;
-            margin: 18px auto 30px;
-        }
-
-        .intro {
-            max-width: 700px;
-            margin: auto;
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            line-height: 1.7;
-            color: #665548;
-        }
-
-        /* PHOTO */
-
-        .photo-area {
-            width: min(900px, 100%);
-            margin: 45px auto 0;
-        }
-
-        .photo-box {
-            width: 100%;
-            min-height: 450px;
-            padding: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #e5dbce;
-            border: 1px solid #c5b29a;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .photo-box img {
-            display: block;
-            width: 100%;
-            max-width: 850px;
-            height: auto;
-            max-height: 650px;
-            object-fit: contain;
-            border-radius: 5px;
-        }
-
-        /* SERVICES */
-
-        .services {
-            width: min(1100px, 100%);
-            margin: 45px auto 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service {
-            background: white;
-            padding: 38px 25px;
-            border: 1px solid #e4d8ca;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(40, 25, 15, 0.12);
-        }
-
-        .service h3 {
-            font-size: 23px;
-            font-weight: normal;
-            margin-bottom: 12px;
-        }
-
-        .service p {
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #6a5a4d;
-        }
-
-        /* ABOUT */
-
-        .about-section {
-            background: #eee5da;
-        }
-
-        .about {
-            max-width: 800px;
-            margin: auto;
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            line-height: 1.8;
-            color: #5d4d40;
-        }
-
-        /* CONTACT */
-
-        .contact-section {
-            background: #d4c0a5;
-        }
-
-        .contact-box {
-            max-width: 600px;
-            margin: 35px auto 0;
-            padding: 35px 25px;
-            background: white;
-            border-radius: 8px;
-        }
-
-        .contact-box p {
-            font-family: Arial, sans-serif;
-            margin: 10px 0;
-            color: #5d4d40;
-        }
-
-        .contact-box strong {
-            font-size: 23px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #1c1510;
-            color: #cdb594;
-            text-align: center;
-            padding: 25px 15px;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-        }
-
-        /* TABLET */
-
-        @media (max-width: 850px) {
-
-            .services {
-                grid-template-columns: 1fr;
-                max-width: 550px;
-            }
-
-            .photo-box {
-                min-height: 350px;
-            }
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 600px) {
-
-            .hero {
-                min-height: 480px;
-                padding: 60px 18px;
-            }
-
-            .section {
-                padding: 60px 16px;
-            }
-
-            .photo-box {
-                min-height: 280px;
-                padding: 10px;
-            }
-
-            .photo-box img {
-                max-height: 500px;
-            }
-        }
-        .gallery {
-    width: min(1100px, 100%);
-    margin: 45px auto 0;
+header {
+    background: #0b0b0b;
+    color: white;
+    padding: 18px 6%;
     display: flex;
-    justify-content: center;
-    gap: 22px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #c9a45c;
 }
 
-.gallery-item {
-    width: min(850px, 100%);
-    background: #e5dbce;
-    padding: 10px;
-    border: 1px solid #c5b29a;
-    border-radius: 8px;
-    overflow: hidden;
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+.logo-box img {
+    width: 72px;
+    height: 72px;
     object-fit: contain;
-    border-radius: 5px;
-}
-.whatsapp-contact {
-    margin-top: 25px;
-    padding: 20px;
-    border: 1px solid #e4d8ca;
-    border-radius: 8px;
-    background: #f7f3ed;
 }
 
-.whatsapp-contact h3 {
+.logo-text {
+    letter-spacing: 3px;
+}
+
+.logo-text h2 {
     font-size: 22px;
-    font-weight: normal;
-    margin-bottom: 5px;
+    color: #d8b56a;
 }
 
-.whatsapp-contact p {
-    margin: 5px 0 15px;
+.logo-text p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #ddd;
+    margin-top: 4px;
 }
 
-.whatsapp-contact a {
-    display: inline-block;
-    padding: 12px 22px;
-    background: #21170f;
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d8b56a;
+}
+
+.contact-btn {
+    border: 1px solid #d8b56a;
+    padding: 11px 18px;
+    color: #d8b56a !important;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 720px;
+    background:
+        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.60)),
+        url("images/carving1-jpg.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-logo {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,.7));
+}
+
+.location {
+    color: #d8b56a;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+    font-weight: normal;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.gold-line {
+    width: 100px;
+    height: 2px;
+    background: #d8b56a;
+    margin: 20px auto;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 17px;
+    color: #eee;
+}
+
+.gold-btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 14px 30px;
+    background: #d8b56a;
+    color: #111;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.gold-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+/* ===== GENERAL SECTIONS ===== */
+
+section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: #b28a3c;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: normal;
+    margin-top: 12px;
+}
+
+.section-title .line {
+    width: 70px;
+    height: 2px;
+    background: #c9a45c;
+    margin: 20px auto;
+}
+
+/* ===== WORK ===== */
+
+#work {
+    background:
+        linear-gradient(rgba(245,242,236,.94), rgba(245,242,236,.94)),
+        url("images/carving1-jpg.jpg") center/cover;
+}
+
+.work-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.work-card {
+    background: white;
+    padding: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.12);
+    border: 1px solid #ded6c8;
+}
+
+.work-card img {
+    width: 100%;
+    height: 600px;
+    object-fit: contain;
+    background: #111;
+    display: block;
+}
+
+.work-caption {
+    text-align: center;
+    padding: 25px 10px 10px;
+}
+
+.work-caption h3 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.work-caption p {
+    color: #777;
+}
+
+/* ===== SERVICES ===== */
+
+.services {
+    background: #0c0c0c;
+    color: white;
+}
+
+.services .section-title h2 {
+    color: white;
+}
+
+.service-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    border: 1px solid #66532e;
+    padding: 40px 25px;
+    text-align: center;
+    background: #121212;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: #d8b56a;
+}
+
+.service-icon {
+    font-size: 38px;
+    color: #d8b56a;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #d8b56a;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+/* ===== ABOUT ===== */
+
+#about {
+    background: #eee9e1;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-container p {
+    font-size: 18px;
+    line-height: 2;
+    color: #444;
+}
+
+/* ===== CONTACT ===== */
+
+#contact {
+    background:
+        linear-gradient(rgba(10,10,10,.94), rgba(10,10,10,.94)),
+        url("images/carving1-jpg.jpg") center/cover;
+    color: white;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-box {
+    border: 1px solid #66532e;
+    padding: 40px 25px;
+    background: rgba(0,0,0,.5);
+}
+
+.contact-box h3 {
+    color: #d8b56a;
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 22px;
+}
+
+.contact-box p {
+    margin: 12px 0;
+    color: #ddd;
+    font-size: 17px;
+}
+
+.contact-box a {
+    color: #d8b56a;
     text-decoration: none;
 }
 
-.whatsapp-contact a:hover {
-    background: #5b432e;
+.contact-box a:hover {
+    color: white;
 }
-        .logo img {
-    width: 180px;
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #050505;
+    color: #aaa;
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 1px solid #66532e;
+    font-size: 14px;
 }
-    </style>
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 65px 18px;
+    }
+
+    .logo-box img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-text h2 {
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-logo {
+        width: 125px;
+        height: 125px;
+    }
+
+    .work-card {
+        padding: 10px;
+    }
+
+    .work-card img {
+        height: 300px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+<!-- HEADER -->
+<header>
 
-    <header>
+    <div class="logo-box">
+        <img src="images/logo.png" alt="Safei Carving Logo">
 
-        <div class="logo">
-    <img src="images/logo.png" alt="Safei Carving Logo">
-</div>
-
-        <div class="tagline">
-            CRAFT • DETAIL • ELEGANCE
+        <div class="logo-text">
+            <h2>SAFEI CARVING</h2>
+            <p>CRAFT • DETAIL • ELEGANCE</p>
         </div>
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#work">Our Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="location">
-                Karachi, Pakistan
-            </div>
-
-            <h1>
-                Carved With<br>
-                Passion
-            </h1>
-
-            <p>
-                Beautiful carving work created with detail,
-                craftsmanship and timeless design.
-            </p>
-
-            <a href="#work" class="button">
-                Explore Our Work
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- OUR WORK -->
-
-    <section class="section" id="work">
-
-        <h2>
-            Our Carving Work
-        </h2>
-
-        <div class="line"></div>
-
-        <p class="intro">
-            A glimpse of our craftsmanship.
-            More designs and projects can be added here anytime.
-        </p>
-
-
-        <div class="gallery">
-
-            <div class="gallery-item">
-                <img
-                    src="images/carving1-jpg.jpg"
-                    alt="Safei Carving Work">
-            </div>
-        
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section class="section">
-
-        <h2>
-            What We Do
-        </h2>
-
-        <div class="line"></div>
-
-
-        <div class="services">
-
-            <div class="service">
-
-                <h3>
-                    Custom Carving
-                </h3>
-
-                <p>
-                    Unique carving designs created according
-                    to your requirements.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>
-                    Fine Detail
-                </h3>
-
-                <p>
-                    Beautiful patterns and careful finishing
-                    with attention to every detail.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>
-                    Quality Craftsmanship
-                </h3>
-
-                <p>
-                    Professional workmanship focused on
-                    clean and lasting results.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="section about-section">
-
-        <h2>
-            About Safei Carving
-        </h2>
-
-        <div class="line"></div>
-
-
-        <div class="about">
-
-            <p>
-                Safei Carving is a carving business based in Karachi.
-                We focus on beautiful designs, detailed craftsmanship
-                and quality work for our customers.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <div class="contact-box">
-
-        <p>
-            <strong>Contact Safei Carving</strong>
-        </p>
-    
-        <div class="whatsapp-contact">
-            <h3>Saifullah</h3>
-            <p>03083795546</p>
-            <a href="https://wa.me/923083795546" target="_blank">
-                WhatsApp
-            </a>
-        </div>
-    
-        <div class="whatsapp-contact">
-            <h3>Shahzaib Ali</h3>
-            <p>03702164283</p>
-            <a href="https://wa.me/923702164283" target="_blank">
-                WhatsApp
-            </a>
-        </div>
-    
     </div>
-    </section>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#work">Our Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="contact-btn">Get In Touch</a>
+    </nav>
+
+</header>
 
 
-    <!-- FOOTER -->
+<!-- HERO -->
+<section class="hero" id="home">
 
-    <footer>
+    <div class="hero-content">
+
+        <img class="hero-logo"
+             src="images/logo.png"
+             alt="Safei Carving">
+
+        <div class="location">KARACHI • PAKISTAN</div>
+
+        <h1>Carved With Passion</h1>
+
+        <div class="gold-line"></div>
 
         <p>
-            © 2026 Safei Carving. All Rights Reserved.
+            Premium marble designing and carving crafted with passion,
+            precision and timeless elegance.
         </p>
 
-    </footer>
+        <a href="#work" class="gold-btn">Explore Our Work</a>
+
+    </div>
+
+</section>
+
+
+<!-- OUR WORK -->
+<section id="work">
+
+    <div class="section-title">
+        <span>OUR CRAFT</span>
+        <h2>Beautiful Marble Designs</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="work-container">
+
+        <div class="work-card">
+
+            <img src="images/carving1-jpg.jpg"
+                 alt="Safei Carving Marble Work">
+
+            <div class="work-caption">
+
+                <h3>Marble Carving</h3>
+
+                <p>
+                    Detailed marble craftsmanship created with precision
+                    and attention to every detail.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services">
+
+    <div class="section-title">
+
+        <span>WHAT WE DO</span>
+
+        <h2>Our Services</h2>
+
+        <div class="line"></div>
+
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+
+            <div class="service-icon">✦</div>
+
+            <h3>Custom Carving</h3>
+
+            <p>
+                Unique marble carving designs made according to
+                your requirements.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">◆</div>
+
+            <h3>Fine Detail</h3>
+
+            <p>
+                Carefully crafted details that bring every marble
+                design to life.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">✓</div>
+
+            <h3>Quality Craftsmanship</h3>
+
+            <p>
+                Quality workmanship with focus on beauty,
+                durability and precision.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="section-title">
+
+        <span>ABOUT US</span>
+
+        <h2>Safei Carving</h2>
+
+        <div class="line"></div>
+
+    </div>
+
+    <div class="about-container">
+
+        <p>
+            Safei Carving is a marble designing and carving business
+            based in Karachi, Pakistan. We create detailed and elegant
+            marble designs with passion, precision and quality
+            craftsmanship.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="section-title">
+
+        <span>GET IN TOUCH</span>
+
+        <h2>Contact Us</h2>
+
+        <div class="line"></div>
+
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-box">
+
+            <h3>Safei Carving</h3>
+
+            <p>
+                <strong>Saifullah:</strong>
+                <a href="tel:03083795546">03083795546</a>
+            </p>
+
+            <p>
+                <strong>Shahzaib Ali:</strong>
+                <a href="tel:03702164283">03702164283</a>
+            </p>
+
+            <p>
+                WhatsApp:
+                <a href="https://wa.me/923083795546" target="_blank">
+                    Message Us
+                </a>
+            </p>
+
+            <p>
+                Karachi, Pakistan
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    © 2026 Safei Carving — Marble Designing & Carving
+
+</footer>
 
 </body>
-
 </html>
-```
